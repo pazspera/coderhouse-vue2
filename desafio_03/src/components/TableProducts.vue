@@ -1,19 +1,17 @@
 <template>
-  <div class="col">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col" v-for="(title, t) in titles" :key="t">{{ title }}</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr v-for="(product, p) in products" :key="p">
-              <td>{{ p + 1 }}</td>
-              <td v-for="(row, r) in product" :key="r">{{ row }}</td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" v-for="(title, t) in titles" :key="t">{{ title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(product, p) in products" :key="p">
+        <td>{{ p + 1 }}</td>
+        <td v-for="(row, r) in product" :key="r">{{ row }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
@@ -27,6 +25,10 @@ export default {
     products: {
       type: Array,
       required: true,
+    },
+    cssClasses: {
+      type: Object,
+      required: false,
     },
   },
 };

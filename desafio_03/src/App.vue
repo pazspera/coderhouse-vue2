@@ -3,15 +3,15 @@
     <main class="container my-5">
       <div class="col mt-3 mb-5">
         <h2 class="mb-3">Hamburguesas</h2>
-        <TableProducts :titles="hamburgers.titles" :products="hamburgers.products" />
+        <TableProducts :titles="hamburgers.titles" :products="hamburgers.products" :class="hamburgers.cssClasses"/>
       </div>
       <div class="col mt-3 mb-5">
         <h2 class="mb-3">Tapas</h2>
-        <TableProducts :titles="tapas.titles" :products="tapas.products"/>
+        <TableProducts :titles="tapas.titles" :products="tapas.products" :class="tapas.cssClasses"/>
       </div>
       <div class="col mt-3 mb-5">
         <h2 class="mb-3">Bebidas</h2>
-        <TableProducts :titles="drinks.titles" :products="drinks.products"/>
+        <TableProducts :titles="drinks.titles" :products="drinks.products" :class="drinks.cssClasses"/>
       </div>
     </main>
   </div>
@@ -51,6 +51,10 @@ export default {
             price: "950",
           },
         ],
+        cssClasses: {
+          "table-dark": true,
+          "text-warning": true,
+        },
       },
       tapas: {
         titles: ["Id", "Nombre", "Descripción", "Precio"],
@@ -76,6 +80,10 @@ export default {
             price: "950",
           },
         ],
+        cssClasses: {
+          "table-striped": true,
+          "text-black-50": true,
+        },
       },
       drinks: {
         titles: ["Id", "Nombre", "Precio"],
@@ -101,6 +109,10 @@ export default {
             price: "950",
           },
         ],
+        cssClasses: {
+          "table-light": true,
+          "text-danger": true,
+        },
       },
     };
   },
