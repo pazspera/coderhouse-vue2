@@ -1,8 +1,21 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <ProductCard :products="products.hamburgers" />
-  </div>
+  <main id="app">
+    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+    <section class="container">
+      <h2>Hamburguesas</h2>
+      <ProductCard :products="products.hamburgers" />
+    </section>
+
+    <section class="container">
+      <h2>Tapas</h2>
+      <ProductCard :products="products.tapas" />
+    </section>
+
+    <section class="container">
+      <h2>Bebidas</h2>
+      <ProductCard :products="products.drinks" />
+    </section>
+  </main>
 </template>
 
 <script>
@@ -90,11 +103,5 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
