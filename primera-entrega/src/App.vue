@@ -1,18 +1,18 @@
 <template>
   <main id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <section class="container">
-      <h2>Hamburguesas</h2>
+    <section class="container my-5">
+      <h2 class="mb-3">Hamburguesas</h2>
       <ProductCard :products="products.hamburgers" />
     </section>
 
-    <section class="container">
-      <h2>Tapas</h2>
+    <section class="container my-5">
+      <h2 class="mb-3">Tapas</h2>
       <ProductCard :products="products.tapas" />
     </section>
 
-    <section class="container">
-      <h2>Bebidas</h2>
+    <section class="container my-5">
+      <h2 class="mb-3">Bebidas</h2>
       <ProductCard :products="products.drinks" />
     </section>
   </main>

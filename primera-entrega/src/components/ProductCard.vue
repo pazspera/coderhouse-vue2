@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col sm-6 lg-4" v-for="(product, p) in products" :key="p">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" v-for="(product, p) in products" :key="p">
       <div class="card h-100" >
         <!-- <img src="..." class="card-img-top" alt="..." /> -->
         <div class="card-body">
