@@ -1,5 +1,6 @@
 <template>
-  <div class="card" style="width: 18rem">
+  <div class="row">
+    <div class="card" style="width: 18rem" v-for="(product, p) in products" :key="p">
     <!-- <img src="..." class="card-img-top" alt="..." /> -->
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
@@ -8,14 +9,15 @@
       <a href="#" class="btn btn-primary">Agregar a carrito</a>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "ProductCard",
   props: {
-    product: {
-      type: Object,
+    products: {
+      type: Array,
       required: true,
     },
   },

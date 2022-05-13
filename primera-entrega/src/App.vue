@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <ProductCard  v-for="(product, p) in products" :key="p"  />
+    <ProductCard :products="products.hamburgers" />
   </div>
 </template>
 
@@ -15,8 +15,8 @@ export default {
   },
   data() {
     return {
-      hamburgers: {
-        products: [
+      products: {
+        hamburgers: [
           {
             name: "Doble Bacon",
             description: "2 medallones de carne de 100gr, cheddar, panceta ahumada, cebolla caramelizada",
@@ -38,9 +38,7 @@ export default {
             price: "950",
           },
         ],
-      },
-      tapas: {
-        products: [
+        tapas: [
           {
             name: "Papas con Cheddar",
             description: "Papas fritas con salsa cheddar",
@@ -62,9 +60,7 @@ export default {
             price: "950",
           },
         ],
-      },
-      drinks: {
-        products: [
+        drinks: [
           {
             name: "Coca Cola Lata 354ml",
             price: "250",
