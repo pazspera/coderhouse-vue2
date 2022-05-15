@@ -19,89 +19,37 @@
 </template>
 
 <script>
-import ProductCard from "./components/ProductCard.vue";
+import axios from "axios";
+import ProductCard from "@/components/ProductCard.vue";
 
 export default {
   name: "App",
   components: {
     ProductCard,
   },
-  data() {
-    return {
-      products: {
-        hamburgers: [
-          {
-            name: "Doble Bacon",
-            description: "2 medallones de carne de 100gr, cheddar, panceta ahumada, cebolla caramelizada",
-            price: "1120",
-          },
-          {
-            name: "Baby Blue",
-            description: "Medallón de carne de 100gr, queso azul, morrón, cebolla caramelizada, pepinillos",
-            price: "1050",
-          },
-          {
-            name: "Locura Not Burger",
-            description: "Medallón not burger, guacamole, tomate, cebolla caramelizada, huevo frito",
-            price: "1050",
-          },
-          {
-            name: "Remolacha Pasión",
-            description: "Medallón de remolacha, tomates cherry, mozzarella",
-            price: "950",
-          },
-        ],
-        tapas: [
-          {
-            name: "Papas con Cheddar",
-            description: "Papas fritas con salsa cheddar",
-            price: "550",
-          },
-          {
-            name: "Papas Fogosas",
-            description: "Papas fritas con salsa picante",
-            price: "550",
-          },
-          {
-            name: "Nachos Completos",
-            description: "Nachos con queso cheddar y dip de guacamole",
-            price: "750",
-          },
-          {
-            name: "Mozzarellas Pasión",
-            description: "Triángulos de queso mozzarella rebozados (6) con salsa de toma y guacamole",
-            price: "950",
-          },
-        ],
-        drinks: [
-          {
-            name: "Coca Cola Lata 354ml",
-            price: "250",
-          },
-          {
-            name: "Sprite Lata 354ml",
-            price: "250",
-          },
-          {
-            name: "Agua Botella 500ml",
-            price: "250",
-          },
-          {
-            name: "Porrón Patagonia 500ml",
-            price: "450",
-          },
-          {
-            name: "Botella Patagonia 1 litro",
-            price: "950",
-          },
-        ],
-      },
-    };
+  data: () => ({
+    products: [],
+    cart: []
+  }),
+  mounted() {
+    this.getProducts();
   },
+  methods: {
+    async getProducts() {
+      try {
+        const res = await axios.get("./data/products.json");
+        // Guarda lo que se recibe en el products del data
+        this.products = await res.data;
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
 };
 </script>
 
 <style>
 #app {
+  margin: 0;
 }
 </style>
