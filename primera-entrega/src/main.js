@@ -4,10 +4,10 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faCoffee);
+library.add(faCartShopping);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

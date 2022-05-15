@@ -1,9 +1,9 @@
 <template>
   <div>
-    <button class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><img class="cart__icon" src="@/assets/img/cart-shopping-solid.svg"></button>
+    <button class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Mi pedido</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -41,7 +41,7 @@ export default {
   color: black;
 }
 
-.cart__icon {
+.fa-cart-shopping {
   height: 5vh;
   width: 5vw;
   min-height: 30px;
