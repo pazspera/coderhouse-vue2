@@ -138,7 +138,8 @@ export default {
       ],
       hamburgers: [],
       tapas: [],
-      drinks: []
+      drinks: [],
+      cart: []
     };
   },
   methods: {
