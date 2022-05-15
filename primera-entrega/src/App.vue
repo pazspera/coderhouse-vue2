@@ -1,6 +1,8 @@
 <template>
   <main id="app">
-    <ShoppingCart />
+    <NavBar>
+    </NavBar>
+      <ShoppingCart />
     <section class="container my-5">
       <h2 class="mb-3">Hamburguesas</h2>
       <ProductCard :products="hamburgers" />
@@ -20,13 +22,15 @@
 
 <script>
 import ProductCard from "@/components/ProductCard.vue";
-import ShoppingCart from './components/ShoppingCart.vue';
+import ShoppingCart from "@/components/ShoppingCart.vue";
+import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "App",
   components: {
     ProductCard,
-    ShoppingCart
+    ShoppingCart,
+    NavBar,
   },
   mounted() {
     // a la carga del documento se dividen los datos de products en categorías,
