@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import ProductCard from "@/components/ProductCard.vue";
 
 export default {
@@ -27,24 +26,104 @@ export default {
   components: {
     ProductCard,
   },
-  data: () => ({
-    products: [],
-    cart: []
-  }),
-  mounted() {
-    this.getProducts();
+  data() {
+    return {
+      products: {
+        hamburgers: [
+          {
+            id: "h01",
+            name: "Doble Bacon",
+            description: "2 medallones de carne de 100gr, cheddar, panceta ahumada, cebolla caramelizada",
+            price: "1120",
+            imgSrc: "doble_bacon.jpg",
+          },
+          {
+            id: "h02",
+            name: "Baby Blue",
+            description: "Medallón de carne de 100gr, queso azul, morrón, cebolla caramelizada, pepinillos",
+            price: "1050",
+            imgSrc: "baby_blue.jpg",
+          },
+          {
+            id: "h03",
+            name: "Locura Not Burger",
+            description: "Medallón not burger, guacamole, tomate, cebolla caramelizada, huevo frito",
+            price: "1050",
+            imgSrc: "locura_not_burger.jpg",
+          },
+          {
+            id: "h04",
+            name: "Remolacha Pasión",
+            description: "Medallón de remolacha, tomates cherry, mozzarella",
+            price: "950",
+            imgSrc: "remolacha_pasion.jpg",
+          },
+        ],
+        tapas: [
+          {
+            id: "t01",
+            name: "Papas con Cheddar",
+            description: "Papas fritas con salsa cheddar",
+            price: "550",
+            imgSrc: "papas_cheddar.jpg",
+          },
+          {
+            id: "t02",
+            name: "Papas Bravas",
+            description: "Papas fritas con salsa picante",
+            price: "550",
+            imgSrc: "papas_bravas.jpg",
+          },
+          {
+            id: "t03",
+            name: "Nachos Completos",
+            description: "Nachos con queso cheddar y dip de guacamole",
+            price: "750",
+            imgSrc: "nachos_completos.jpg",
+          },
+          {
+            id: "t04",
+            name: "Mozzarellas Pasión",
+            description: "Triángulos de queso mozzarella rebozados (6) con salsa de toma y guacamole",
+            price: "950",
+            imgSrc: "mozzarellas_pasion.jpg",
+          },
+        ],
+        drinks: [
+          {
+            id: "d01",
+            name: "Coca Cola Lata 354ml",
+            price: "250",
+            imgSrc: "coca_cola_354.jpg",
+          },
+          {
+            id: "d02",
+            name: "Sprite Lata 354ml",
+            price: "250",
+            imgSrc: "sprite_354.jpg",
+          },
+          {
+            id: "d03",
+            name: "Agua Botella 500ml",
+            price: "250",
+            imgSrc: "agua_500.jpg",
+          },
+          {
+            id: "d04",
+            name: "Porrón Patagonia 500ml",
+            price: "450",
+            imgSrc: "porron_patagonia_500.jpg",
+          },
+          {
+            id: "d05",
+            name: "Botella Patagonia 1 litro",
+            price: "950",
+            imgSrc: "patagonia_1litro.jpg",
+          },
+        ],
+      },
+    };
   },
-  methods: {
-    async getProducts() {
-      try {
-        const res = await axios.get("./data/products.json");
-        // Guarda lo que se recibe en el products del data
-        this.products = await res.data;
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  }
 };
 </script>
 

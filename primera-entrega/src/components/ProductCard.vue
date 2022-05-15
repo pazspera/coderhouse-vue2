@@ -2,7 +2,7 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <div class="col" v-for="(product, p) in products" :key="p">
       <div class="card h-100" >
-        <!-- <img src="..." class="card-img-top" alt="..." /> -->
+        <!-- <img :src="getImgUrl()" class="card-img-top" :alt="product.name" /> -->
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">{{ product.description }}</p>
@@ -23,6 +23,11 @@ export default {
       required: true,
     },
   },
+  methods: {
+    getImgUrl() {
+      return require(`@/assets/img/${this.imgSrc}`);
+    }
+  }
 };
 </script>
 
