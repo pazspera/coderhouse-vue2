@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Button with data-bs-target</button>
+    <button class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Button with data-bs-target</button>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
@@ -16,8 +16,25 @@
 
 <script>
 export default {
-    name: "ShoppingCart",
+  name: "ShoppingCart",
 };
 </script>
 
-<style></style>
+<style>
+.cart {
+  position: fixed;
+  cursor: pointer;
+  top: 10vh;
+  right: 10vw;
+  z-index: 998;
+  padding: 2rem;
+  border-radius: 100%;
+  margin-top: 0.5rem;
+  height: 75px;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+}
+</style>

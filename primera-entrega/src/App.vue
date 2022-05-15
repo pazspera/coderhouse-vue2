@@ -1,8 +1,8 @@
 <template>
   <main id="app">
-    <NavBar>
-    </NavBar>
-      <ShoppingCart />
+    <NavBar> </NavBar>
+    <p>Have a cup of coffee: <font-awesome-icon icon="coffee" /></p>
+    <ShoppingCart />
     <section class="container my-5">
       <h2 class="mb-3">Hamburguesas</h2>
       <ProductCard :products="hamburgers" />
