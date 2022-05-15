@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+    <ShoppingCart />
     <section class="container my-5">
       <h2 class="mb-3">Hamburguesas</h2>
       <ProductCard :products="hamburgers" />
@@ -20,14 +20,16 @@
 
 <script>
 import ProductCard from "@/components/ProductCard.vue";
+import ShoppingCart from './components/ShoppingCart.vue';
 
 export default {
   name: "App",
   components: {
     ProductCard,
+    ShoppingCart
   },
   mounted() {
-    // a la carga del documento se dividen los datos de products en categorías, 
+    // a la carga del documento se dividen los datos de products en categorías,
     // así se pueden mostrar en el DOM en base a cada categoría
     this.hamburgers = this.filterProducts(this.products, "hamburgers");
     this.tapas = this.filterProducts(this.products, "tapas");
@@ -139,7 +141,7 @@ export default {
       hamburgers: [],
       tapas: [],
       drinks: [],
-      cart: []
+      cart: [],
     };
   },
   methods: {
