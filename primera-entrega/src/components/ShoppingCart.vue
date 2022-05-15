@@ -1,7 +1,6 @@
 <template>
   <div>
-    <button class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Button with data-bs-target</button>
-
+    <button class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><img class="cart__icon" src="@/assets/img/cart-shopping-solid.svg"></button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
@@ -30,11 +29,22 @@ export default {
   padding: 2rem;
   border-radius: 100%;
   margin-top: 0.5rem;
-  height: 75px;
-  width: 75px;
+  height: 5vh;
+  width: 5vw;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
+}
+
+.fa-solid {
+  color: black;
+}
+
+.cart__icon {
+  height: 5vh;
+  width: 5vw;
+  min-height: 30px;
+  min-width: 30px;
 }
 </style>
