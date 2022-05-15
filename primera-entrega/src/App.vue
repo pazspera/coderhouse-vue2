@@ -2,6 +2,7 @@
   <main id="app">
     <NavBar> </NavBar>
     <ShoppingCart />
+    <p>Cart: {{ cart }}</p>
     <section class="container my-5">
       <h2 class="mb-3">Hamburguesas</h2>
       <ProductCard :products="hamburgers" />
@@ -153,7 +154,7 @@ export default {
       // en un array por categoría (hamburgers, tapas, drinks)
       let filteredArray = array.filter((product) => product.category === category);
       return filteredArray;
-    },
+    }
   },
 };
 </script>
