@@ -3,17 +3,17 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <section class="container my-5">
       <h2 class="mb-3">Hamburguesas</h2>
-      <ProductCard :products="products.hamburgers" />
+      <ProductCard :products="hamburgers" />
     </section>
 
     <section class="container my-5">
       <h2 class="mb-3">Tapas</h2>
-      <ProductCard :products="products.tapas" />
+      <ProductCard :products="tapas" />
     </section>
 
     <section class="container my-5">
       <h2 class="mb-3">Bebidas</h2>
-      <ProductCard :products="products.drinks" />
+      <ProductCard :products="drinks" />
     </section>
   </main>
 </template>
@@ -25,6 +25,13 @@ export default {
   name: "App",
   components: {
     ProductCard,
+  },
+  mounted() {
+    // a la carga del documento se dividen los datos de products en categorías, 
+    // así se pueden mostrar en el DOM en base a cada categoría
+    this.hamburgers = this.filterProducts(this.products, "hamburgers");
+    this.tapas = this.filterProducts(this.products, "tapas");
+    this.drinks = this.filterProducts(this.products, "drinks");
   },
   data() {
     return {
@@ -129,6 +136,9 @@ export default {
           category: "drinks",
         },
       ],
+      hamburgers: [],
+      tapas: [],
+      drinks: []
     };
   },
   methods: {
