@@ -178,7 +178,7 @@ export default {
       let addedProduct = this.cart.find((product) => product.id === productId);
 
       // Si addedProduct no está en el array devuelve undefined que es falsy
-      if(addedProduct) {
+      if (addedProduct) {
         // Actualiza cantidad y total si producto está en cart
         addedProduct.quantity++;
         addedProduct.total = addedProduct.quantity * addedProduct.price;
@@ -190,7 +190,7 @@ export default {
         newProduct.total = newProduct.price;
         this.cart.push(newProduct);
       }
-    },
+    }
   },
 };
 </script>
