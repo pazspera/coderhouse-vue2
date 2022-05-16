@@ -1,13 +1,16 @@
 <template>
   <div>
-    <button class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></button>
+    <div class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <p class="cart__indicator">{{ cart.length }}</p>
+      <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+    </div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Mi pedido</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div>Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.</div>
+        <p>Cart: {{ cart }}</p>
       </div>
     </div>
   </div>
@@ -16,6 +19,12 @@
 <script>
 export default {
   name: "ShoppingCart",
+  props: {
+    cart: {
+      type: Array,
+      required: true,
+    }
+  }
 };
 </script>
 
@@ -35,6 +44,23 @@ export default {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
+  background-color: aquamarine;
+}
+
+.cart__indicator{
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    z-index: 15;
+    text-align: center;
+    position: absolute;
+    top: -15%;
+    left: 55%;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    padding: 0.04em 0.5em;
+    min-width: 1.7em;
+    min-height: 1.75em;
 }
 
 .fa-solid {

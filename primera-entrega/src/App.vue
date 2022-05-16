@@ -1,8 +1,7 @@
 <template>
   <main id="app">
     <NavBar />
-    <ShoppingCart />
-    <p>Cart: {{ cart }}</p>
+    <ShoppingCart :cart="cart" />
 
     <section class="container my-5">
       <div class="row">
