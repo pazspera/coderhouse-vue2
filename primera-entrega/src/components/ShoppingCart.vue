@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-      <p class="cart__indicator">{{ cart.length }}</p>
+      <p class="cart__indicator">{{ totalInCart }}</p>
       <font-awesome-icon icon="fa-solid fa-cart-shopping" />
     </div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -10,7 +10,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Cart: {{ cart }}</p>
         <TableCart :cart="cart" />
       </div>
     </div>
@@ -31,6 +30,15 @@ export default {
       required: true,
     }
   },
+  computed: {
+    totalInCart() {
+      let total = 0;
+      this.cart.forEach(el => {
+        total += el.quantity;
+      });
+      return total;
+    }
+  }
 };
 </script>
 

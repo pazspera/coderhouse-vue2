@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
   name: "TableCart",
   props: {
@@ -29,7 +30,7 @@ export default {
     return {
       tableTitles: ["Producto", "Cantidad", "Precio", "Total"],
     };
-  },
+  }
 };
 </script>
 

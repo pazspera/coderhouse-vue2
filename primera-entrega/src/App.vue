@@ -51,7 +51,7 @@ export default {
     NavBar,
   },
   mounted() {
-    // a la carga del documento se dividen los datos de products en categorías,
+    // A la carga del documento se dividen los datos de products en categorías,
     // así se pueden mostrar en el DOM en base a cada categoría
     this.hamburgers = this.filterProducts(this.products, "hamburgers");
     this.tapas = this.filterProducts(this.products, "tapas");
@@ -176,15 +176,12 @@ export default {
     updateCart(productId) {
       // Revisa si el addedProduct ya existe en el cart
       let addedProduct = this.cart.find((product) => product.id === productId);
-      console.log(addedProduct);
 
       // Si addedProduct no está en el array devuelve undefined que es falsy
       if(addedProduct) {
         // Actualiza cantidad y total si producto está en cart
         addedProduct.quantity++;
         addedProduct.total = addedProduct.quantity * addedProduct.price;
-        console.log("actualizar producto");
-        console.log(addedProduct);
       } else {
         // Recuperar datos de producto de products[]
         let newProduct = this.products.find((product) => product.id === productId);
