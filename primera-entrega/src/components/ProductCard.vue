@@ -6,8 +6,8 @@
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
         <p class="card-text">${{ product.price }}</p>
-        <ProductCounter />
-        <a href="#" @click="addToCart" :id="product.id" class="btn btn-primary">Agregar a carrito</a>
+        <ProductCounter @update-counter="addToCart" />
+        <a href="#" @click.prevent="addToCart" :id="product.id" class="btn btn-primary">Agregar a carrito</a>
       </div>
     </div>
   </div>
@@ -33,10 +33,10 @@ export default {
     getImgUrl(imgSrc) {
       return require("@/assets/img/" + imgSrc);
     },
-    addToCart(e) {
-      e.preventDefault();
-      this.$emit("add-to-cart", this.product.id);
+    addToCart(counter) {
+      this.$emit("add-to-cart", this.product.id, counter);
       console.log(this.product.id);
+      console.log(counter);
     },
   },
 };
