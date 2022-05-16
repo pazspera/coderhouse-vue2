@@ -19,7 +19,7 @@ export default {
       this.counter++;
     },
     decreaseCounter() {
-      if (this.counter > 1) {
+      if (this.counter > 0) {
         this.counter--;
       }
     },

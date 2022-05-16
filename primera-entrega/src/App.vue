@@ -182,6 +182,7 @@ export default {
         // Actualiza cantidad y total si producto está en cart
         addedProduct.quantity++;
         addedProduct.total = addedProduct.quantity * addedProduct.price;
+        console.log(addedProduct);
       } else {
         // Recuperar datos de producto de products[]
         let newProduct = this.products.find((product) => product.id === productId);
