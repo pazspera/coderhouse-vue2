@@ -168,15 +168,28 @@ export default {
   },
   methods: {
     filterProducts(array, category) {
-      // recibe todos los productos y, en base a la categoría de producto, se guarda
+      // Recibe todos los productos y, en base a la categoría de producto, se guarda
       // en un array por categoría (hamburgers, tapas, drinks)
       let filteredArray = array.filter((product) => product.category === category);
       return filteredArray;
     },
     updateCart(productId) {
-      this.cart.push(productId);
-      console.log(this.cart);
-    }
+      // Recupera el objeto de producto en base al id
+      let addedProduct = this.cart.find((product) => product.id === productId);
+      console.log(addedProduct);
+
+      // Si addedProduct no está en el array devuelve undefined que es falsy
+      if(addedProduct) {
+        console.log(`${productId} está en cart`)
+      } else {
+        console.log(`${productId} no está en cart`);
+        // Recuperar datos de producto de products[]
+        let newProduct = this.products.find((product) => product.id === productId);
+        console.log(newProduct);
+        this.cart.push(newProduct);
+        console.log(this.cart);
+      }
+    },
   },
 };
 </script>
