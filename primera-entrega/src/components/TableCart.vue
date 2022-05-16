@@ -6,11 +6,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
+      <tr scope="row" v-for="(product, p) in cart" :key="p">
+        <td>{{ product.name }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.total }}</td>
       </tr>
     </tbody>
-    <p>{{ cart }}</p>
   </table>
 </template>
 
@@ -19,10 +21,6 @@ export default {
   name: "TableCart",
   props: {
     cart: {
-      type: Array,
-      required: true,
-    },
-    products: {
       type: Array,
       required: true,
     },

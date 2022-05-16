@@ -11,7 +11,7 @@
       </div>
       <div class="offcanvas-body">
         <p>Cart: {{ cart }}</p>
-        <TableCart :cart="cart" :products="products" />
+        <TableCart :cart="cart" />
       </div>
     </div>
   </div>
@@ -29,11 +29,7 @@ export default {
     cart: {
       type: Array,
       required: true,
-    },
-    products: {
-      type: Array,
-      required: true,
-    },
+    }
   },
 };
 </script>

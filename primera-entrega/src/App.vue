@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <NavBar />
-    <ShoppingCart :cart="cart" :products="products" />
+    <ShoppingCart :cart="cart" />
 
     <section class="container my-5">
       <div class="row">
@@ -174,20 +174,24 @@ export default {
       return filteredArray;
     },
     updateCart(productId) {
-      // Recupera el objeto de producto en base al id
+      // Revisa si el addedProduct ya existe en el cart
       let addedProduct = this.cart.find((product) => product.id === productId);
       console.log(addedProduct);
 
       // Si addedProduct no está en el array devuelve undefined que es falsy
       if(addedProduct) {
-        console.log(`${productId} está en cart`)
+        // Actualiza cantidad y total si producto está en cart
+        addedProduct.quantity++;
+        addedProduct.total = addedProduct.quantity * addedProduct.price;
+        console.log("actualizar producto");
+        console.log(addedProduct);
       } else {
-        console.log(`${productId} no está en cart`);
         // Recuperar datos de producto de products[]
         let newProduct = this.products.find((product) => product.id === productId);
-        console.log(newProduct);
+        // Agrega cantidad y total a nuevos productos
+        newProduct.quantity = 1;
+        newProduct.total = newProduct.price;
         this.cart.push(newProduct);
-        console.log(this.cart);
       }
     },
   },
