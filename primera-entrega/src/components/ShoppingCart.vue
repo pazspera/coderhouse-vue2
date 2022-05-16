@@ -11,7 +11,7 @@
       </div>
       <div class="offcanvas-body">
         <p>Cart: {{ cart }}</p>
-        <TableCart />
+        <TableCart :cart="cart" :products="products" />
       </div>
     </div>
   </div>
@@ -29,12 +29,16 @@ export default {
     cart: {
       type: Array,
       required: true,
-    }
-  }
+    },
+    products: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .cart {
   position: fixed;
   cursor: pointer;
@@ -53,20 +57,20 @@ export default {
   background-color: aquamarine;
 }
 
-.cart__indicator{
-    background-color: black;
-    color: white;
-    border-radius: 50%;
-    z-index: 15;
-    text-align: center;
-    position: absolute;
-    top: -15%;
-    left: 55%;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-    padding: 0.04em 0.5em;
-    min-width: 1.7em;
-    min-height: 1.75em;
+.cart__indicator {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  z-index: 15;
+  text-align: center;
+  position: absolute;
+  top: -15%;
+  left: 55%;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  padding: 0.04em 0.5em;
+  min-width: 1.7em;
+  min-height: 1.75em;
 }
 
 .fa-solid {
@@ -78,5 +82,9 @@ export default {
   width: 5vw;
   min-height: 30px;
   min-width: 30px;
+}
+
+.offcanvas {
+  width: 500px;
 }
 </style>
