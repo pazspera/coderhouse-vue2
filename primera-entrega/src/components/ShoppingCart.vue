@@ -11,14 +11,20 @@
       </div>
       <div class="offcanvas-body">
         <p>Cart: {{ cart }}</p>
+        <TableCart />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import TableCart from "@/components/TableCart.vue";
+
 export default {
   name: "ShoppingCart",
+  components: {
+    TableCart,
+  },
   props: {
     cart: {
       type: Array,
