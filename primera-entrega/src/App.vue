@@ -3,19 +3,38 @@
     <NavBar> </NavBar>
     <ShoppingCart />
     <p>Cart: {{ cart }}</p>
+
     <section class="container my-5">
-      <h2 class="mb-3">Hamburguesas</h2>
-      <ProductCard :products="hamburgers" />
+      <div class="row">
+        <div class="col">
+          <h2 class="mb-3">Hamburguesas</h2>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <ProductCard v-for="product in hamburgers" :key="product.id" :product="product" />
+      </div>
     </section>
 
     <section class="container my-5">
-      <h2 class="mb-3">Tapas</h2>
-      <ProductCard :products="tapas" />
+      <div class="row">
+        <div class="col">
+          <h2 class="mb-3">Tapas</h2>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <ProductCard v-for="product in tapas" :key="product.id" :product="product" />
+      </div>
     </section>
 
     <section class="container my-5">
-      <h2 class="mb-3">Bebidas</h2>
-      <ProductCard :products="drinks" />
+      <div class="row">
+        <div class="col">
+          <h2 class="mb-3">Bebidas</h2>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <ProductCard v-for="product in drinks" :key="product.id" :product="product" />
+      </div>
     </section>
   </main>
 </template>
@@ -38,6 +57,9 @@ export default {
     this.hamburgers = this.filterProducts(this.products, "hamburgers");
     this.tapas = this.filterProducts(this.products, "tapas");
     this.drinks = this.filterProducts(this.products, "drinks");
+    console.log(this.hamburgers);
+    console.log(this.tapas);
+    console.log(this.drinks);
   },
   data() {
     return {
@@ -154,7 +176,7 @@ export default {
       // en un array por categoría (hamburgers, tapas, drinks)
       let filteredArray = array.filter((product) => product.category === category);
       return filteredArray;
-    }
+    },
   },
 };
 </script>
