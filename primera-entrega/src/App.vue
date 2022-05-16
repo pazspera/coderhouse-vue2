@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <NavBar> </NavBar>
+    <NavBar />
     <ShoppingCart />
     <p>Cart: {{ cart }}</p>
 
@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <ProductCard v-for="product in hamburgers" :key="product.id" :product="product" />
+        <ProductCard v-for="product in hamburgers" :key="product.id" :product="product" @add-to-cart="updateCart" />
       </div>
     </section>
 
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <ProductCard v-for="product in tapas" :key="product.id" :product="product" />
+        <ProductCard v-for="product in tapas" :key="product.id" :product="product" @add-to-cart="updateCart" />
       </div>
     </section>
 
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <ProductCard v-for="product in drinks" :key="product.id" :product="product" />
+        <ProductCard v-for="product in drinks" :key="product.id" :product="product" @add-to-cart="updateCart" />
       </div>
     </section>
   </main>
@@ -57,9 +57,6 @@ export default {
     this.hamburgers = this.filterProducts(this.products, "hamburgers");
     this.tapas = this.filterProducts(this.products, "tapas");
     this.drinks = this.filterProducts(this.products, "drinks");
-    console.log(this.hamburgers);
-    console.log(this.tapas);
-    console.log(this.drinks);
   },
   data() {
     return {
@@ -177,6 +174,10 @@ export default {
       let filteredArray = array.filter((product) => product.category === category);
       return filteredArray;
     },
+    updateCart(productId) {
+      this.cart.push(productId);
+      console.log(this.cart);
+    }
   },
 };
 </script>

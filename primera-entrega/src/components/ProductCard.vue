@@ -27,9 +27,9 @@ export default {
     getImgUrl(imgSrc) {
       return require("@/assets/img/" + imgSrc);
     },
-    addToCart() {
-      // Estoy tratando de que al hacer click en el btn de la card, que imprima en consola
-      // el product.id. Me devuelve undefined y no entiendo porqué
+    addToCart(e) {
+      e.preventDefault();
+      this.$emit("add-to-cart", this.product.id);
       console.log(this.product.id);
     },
   },
