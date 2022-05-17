@@ -18,7 +18,8 @@ export default {
     /*  
       increaseCounter() y decreaseCounter() mandan al ProductCard la cantidad
       actualizada cada vez que se hace click en el ProductCounter
-      ProductCard lo recibe y al addToCart hacemos que pase un objeto con this.product.id y counter que recibió
+      ProductCard lo recibe y al addToCart hacemos que pase un objeto 
+      con this.product.id y counter que recibió
     */
     increaseCounter() {
       this.counter++;

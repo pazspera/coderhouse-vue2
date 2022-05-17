@@ -185,7 +185,9 @@ export default {
         console.log(addedProduct);
       } else {
         // Recuperar datos de producto de products[]
-        let newProduct = this.products.find((product) => product.id === productId);
+        let findProduct = this.products.find((product) => product.id === productId);
+        // Crea un nuevo objeto 
+        const newProduct = {...findProduct};
         // Agrega cantidad y total a nuevos productos
         newProduct.quantity = productCounter;
         newProduct.total = newProduct.price;

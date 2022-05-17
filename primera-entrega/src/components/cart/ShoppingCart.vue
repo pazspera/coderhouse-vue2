@@ -39,17 +39,6 @@ export default {
       return total;
     },
   },
-  watch: {
-    // La solución que encontré fue forzar reload del componente si hay cambios en cart
-    // El watch no está funcionando correctamente, devuelve que cart es undefined
-    // No entiendo bien por qué
-    cart: {
-      deep: true,
-      function() {
-        this.$forceUpdate();
-      },
-    },
-  },
 };
 </script>
 
