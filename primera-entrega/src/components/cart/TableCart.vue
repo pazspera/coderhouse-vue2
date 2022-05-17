@@ -30,7 +30,7 @@ export default {
     return {
       tableTitles: ["Producto", "Cantidad", "Precio", "Total"],
     };
-  }
+  },
 };
 </script>
 
