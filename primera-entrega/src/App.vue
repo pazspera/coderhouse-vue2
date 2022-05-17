@@ -173,10 +173,8 @@ export default {
       let filteredArray = array.filter((product) => product.category === category);
       return filteredArray;
     },
-    updateCart(productToAdd) {
+    updateCart({ productId, productCounter}) {
       let { productId, productCounter} = productToAdd;
-      console.log(productId);
-      console.log(productCounter);
       // Revisa si el addedProduct ya existe en el cart
       let addedProduct = this.cart.find((product) => product.id === productId);
 
