@@ -20,7 +20,7 @@ export default {
   name: "ProductCard",
   data() {
     return {
-      productCounter: 0,
+      productCounter: 1,
     };
   },
   components: {

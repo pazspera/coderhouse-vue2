@@ -191,7 +191,17 @@ export default {
         newProduct.total = newProduct.price;
         this.cart.push(newProduct);
       }
-    }
+
+      // Si productCounter es 0, eliminar el productId de cart[]
+      if (productCounter === 0) {
+        // Recuperar el id del addedProduct dentro de cart[]
+        let productIndex = this.cart.findIndex((product) => {
+          return product.id === addedProduct.id;
+        });
+        // Borra el addedProduct del cart
+        this.cart.splice(productIndex, 1);
+      }
+    },
   },
 };
 </script>
