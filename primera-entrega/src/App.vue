@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import ProductCard from "@/components/ProductCard.vue";
-import ShoppingCart from "@/components/ShoppingCart.vue";
+import ProductCard from "@/components/products/ProductCard.vue";
+import ShoppingCart from "@/components/cart/ShoppingCart.vue";
 import NavBar from "@/components/NavBar.vue";
 
 export default {

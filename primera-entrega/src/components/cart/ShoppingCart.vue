@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TableCart from "@/components/TableCart.vue";
+import TableCart from "@/components/cart/TableCart.vue";
 
 export default {
   name: "ShoppingCart",

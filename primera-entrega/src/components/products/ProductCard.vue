@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ProductCounter from "@/components/ProductCounter.vue";
+import ProductCounter from "@/components/products/ProductCounter.vue";
 
 export default {
   name: "ProductCard",
