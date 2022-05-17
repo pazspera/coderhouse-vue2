@@ -39,7 +39,11 @@ export default {
       return require("@/assets/img/" + imgSrc);
     },
     addToCart() {
-      this.$emit("add-to-cart", this.product.id, this.productCounter);
+      const productToAdd = {
+        productId: this.product.id,
+        productCounter: this.productCounter
+      }
+      this.$emit("add-to-cart", productToAdd);
       console.log(this.product.id);
       console.log(this.productCounter);
     },
