@@ -6,7 +6,7 @@
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
         <p class="card-text">${{ product.price }}</p>
-        <ProductCounter @update-counter="addToCart" />
+        <ProductCounter @update-counter="updateCounter" />
         <a href="#" @click.prevent="addToCart" :id="product.id" class="btn btn-primary">Agregar a carrito</a>
       </div>
     </div>
@@ -18,6 +18,11 @@ import ProductCounter from "@/components/ProductCounter.vue";
 
 export default {
   name: "ProductCard",
+  data() {
+    return {
+      productCounter: 0,
+    };
+  },
   components: {
     ProductCounter,
   },
@@ -33,11 +38,14 @@ export default {
     getImgUrl(imgSrc) {
       return require("@/assets/img/" + imgSrc);
     },
-    addToCart(counter) {
-      this.$emit("add-to-cart", this.product.id, counter);
+    addToCart() {
+      this.$emit("add-to-cart", this.product.id, this.productCounter);
       console.log(this.product.id);
-      console.log(counter);
+      console.log(this.productCounter);
     },
+    updateCounter(counter) {
+      this.productCounter = counter;
+    }
   },
 };
 </script>

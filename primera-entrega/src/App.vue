@@ -173,21 +173,21 @@ export default {
       let filteredArray = array.filter((product) => product.category === category);
       return filteredArray;
     },
-    updateCart(productId, counter) {
+    updateCart(productId, productCounter) {
       // Revisa si el addedProduct ya existe en el cart
       let addedProduct = this.cart.find((product) => product.id === productId);
 
       // Si addedProduct no está en el array devuelve undefined que es falsy
       if (addedProduct) {
         // Actualiza cantidad y total si producto está en cart
-        addedProduct.quantity = counter;
+        addedProduct.quantity = productCounter;
         addedProduct.total = addedProduct.quantity * addedProduct.price;
         console.log(addedProduct);
       } else {
         // Recuperar datos de producto de products[]
         let newProduct = this.products.find((product) => product.id === productId);
         // Agrega cantidad y total a nuevos productos
-        newProduct.quantity = counter;
+        newProduct.quantity = productCounter;
         newProduct.total = newProduct.price;
         this.cart.push(newProduct);
       }
