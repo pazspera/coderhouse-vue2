@@ -15,7 +15,7 @@
     </tbody>
     <tfoot>
       <tr>
-        <th colspan="4">Total del pedido: {{ calculateTotal }}</th>
+        <td colspan="4">Total del pedido: {{ calculateTotal }}</td>
       </tr>
     </tfoot>
   </table>
@@ -49,4 +49,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
+
+th {
+  font-weight: 600;
+}
+</style>

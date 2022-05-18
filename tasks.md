@@ -3,6 +3,7 @@
 - Cambiar texto de TableCart para que no muestre la tabla si cart[] está vacío
 - Formato de los precios en TableCart y en ProductCard (filters ?)
 - Agregar btn con tacho basura a Table Cart para borrar toda la línea de un producto
+- Corregir descripciones de productos para que coincidan con las imgs
 
 - ~~Recuperar datos de productos de un JSON~~
 - ~~Agregar id a cada producto~~

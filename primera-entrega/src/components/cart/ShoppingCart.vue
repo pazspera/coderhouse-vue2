@@ -89,4 +89,9 @@ export default {
 .offcanvas {
   width: 500px;
 }
+
+.offcanvas-title {
+  font-size: $size3;
+}
+
 </style>
