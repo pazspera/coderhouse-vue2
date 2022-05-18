@@ -15,3 +15,6 @@
 - ~~Diseño de las cards~~
 - ~~Agregar scss con todas las variables~~
 - ~~Probar escribiendo scss en componentes~~
+
+
+fdsfds
