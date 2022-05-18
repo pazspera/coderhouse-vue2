@@ -43,8 +43,6 @@ export default {
         productId: this.product.id,
         productCounter: this.productCounter,
       });
-      console.log(this.product.id);
-      console.log(this.productCounter);
     },
     updateCounter(counter) {
       this.productCounter = counter;

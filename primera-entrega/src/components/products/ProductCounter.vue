@@ -24,13 +24,11 @@ export default {
     increaseCounter() {
       this.counter++;
       this.$emit("update-counter", this.counter);
-      console.log(this.counter);
     },
     decreaseCounter() {
       if (this.counter > 0) {
         this.counter--;
         this.$emit("update-counter", this.counter);
-        console.log(this.counter);
       }
     },
   },

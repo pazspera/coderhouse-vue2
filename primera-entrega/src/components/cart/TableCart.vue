@@ -8,14 +8,16 @@
     <tbody>
       <tr scope="row" v-for="(product, p) in cart" :key="p">
         <td>{{ product.name }}</td>
-        <td>{{ product.quantity }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.total }}</td>
-      </tr>
-      <tr>
-        <td colspan="4">Total: {{ calculateTotal }}</td>
+        <td class="text-center">{{ product.quantity }}</td>
+        <td class="text-center">{{ product.price }}</td>
+        <td class="text-center">{{ product.total }}</td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Total del pedido: {{ calculateTotal }}</th>
+      </tr>
+    </tfoot>
   </table>
 </template>
 
@@ -34,6 +36,8 @@ export default {
     };
   },
   computed: {
+    // calculateTotal() estaba tomando los valores como strings así que los
+    // convierto a todos a number para poder hacer la operación
     calculateTotal() {
       let totalInCart = Number(0);
       this.cart.forEach((product) => {
