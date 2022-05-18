@@ -6,7 +6,7 @@
     <section class="container my-5">
       <div class="row">
         <div class="col">
-          <h2 class="mb-3">Hamburguesas</h2>
+          <h2 class="mb-3 section-title">Hamburguesas</h2>
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -17,7 +17,7 @@
     <section class="container my-5">
       <div class="row">
         <div class="col">
-          <h2 class="mb-3">Tapas</h2>
+          <h2 class="mb-3 section-title">Tapas</h2>
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -28,7 +28,7 @@
     <section class="container my-5">
       <div class="row">
         <div class="col">
-          <h2 class="mb-3">Bebidas</h2>
+          <h2 class="mb-3 section-title">Bebidas</h2>
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -213,5 +213,9 @@ export default {
   margin: 0;
   color: $black;
   background-color: $light-gray;
+}
+
+.section-title {
+  font-size: $size2;
 }
 </style>

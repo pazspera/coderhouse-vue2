@@ -51,4 +51,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
+
+.card,
+.card img {
+  border-radius: 0;
+}
+
+.card-title {
+  font-size: $size4;
+}
+
+.card-text {
+  font-size: $size6;
+}
+</style>
