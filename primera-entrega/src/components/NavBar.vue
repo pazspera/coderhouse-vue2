@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">MacGuffin</a>
       <button
         class="navbar-toggler"
         type="button"

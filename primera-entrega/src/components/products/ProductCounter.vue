@@ -1,7 +1,7 @@
 <template>
   <div class="my-3">
     <button @click="decreaseCounter()">-</button>
-    {{ counter }}
+    <span>{{ counter }}</span>
     <button @click="increaseCounter()">+</button>
   </div>
 </template>
@@ -35,4 +35,21 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
+
+span {
+  margin: 0 $size6;
+}
+
+button {
+  border-top-color: $black;
+  background-color: $black;
+  color: $light-gray;
+  border-bottom-color: $black;
+  border-left-color: $black;
+  border-right-color: $black;
+  height: $size3;
+  width: $size3;
+}
+</style>

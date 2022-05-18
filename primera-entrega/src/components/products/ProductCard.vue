@@ -7,7 +7,7 @@
         <p class="card-text">{{ product.description }}</p>
         <p class="card-text">${{ product.price }}</p>
         <ProductCounter @update-counter="updateCounter" />
-        <a href="#" @click.prevent="addToCart" :id="product.id" class="btn btn-primary">Agregar a carrito</a>
+        <button type="button" @click.prevent="addToCart" :id="product.id" class="btn btn-primary">Agregar a carrito</button>
       </div>
     </div>
   </div>
@@ -59,11 +59,72 @@ export default {
   border-radius: 0;
 }
 
+.card {
+  border-bottom-color: $secondary;
+  border-left-color: $secondary;
+  border-right-color: $secondary;
+  border-top-color: $secondary;
+}
+
 .card-title {
   font-size: $size4;
 }
 
 .card-text {
   font-size: $size6;
+  font-weight: 500;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 0;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: 600;
+  background-color: $primary;
+  border-bottom-color: $primary;
+  border-left-color: $primary;
+  border-right-color: $primary;
+  border-top-color: $primary;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background-color: $black;
+  border-bottom-color: $black;
+  border-left-color: $black;
+  border-right-color: $black;
+  border-top-color: $black;
+}
+
+.btn-primary:active {
+  background-color: $black;
+  border-color: $black;
+}
+
+.btn-primary:active:focus,
+.btn-primary:active:focus-within {
+  box-shadow: none;
+  background-color: $black;
+  border-color: $black;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: $black;
+  border-color: $black;
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: none;
+  background-color: $black;
+  border-color: $black;
 }
 </style>
