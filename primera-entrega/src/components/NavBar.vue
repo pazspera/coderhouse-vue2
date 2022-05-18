@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Logo</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -29,8 +29,22 @@
 
 <script>
 export default {
-    name: "NavBar",
+  name: "NavBar",
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
+.navbar-brand {
+  font-family: $font-logo;
+}
+
+.navbar-brand,
+.nav-link{
+  color: $light-gray;
+}
+
+.navbar {
+  background-color: $black;
+}
+</style>

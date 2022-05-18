@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-      <p class="cart__indicator">{{ totalInCart }}</p>
-      <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+      <span class="cart__indicator">{{ totalInCart }}</span>
+      <font-awesome-icon class="cart__icon" icon="fa-solid fa-cart-shopping" />
     </div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
@@ -42,7 +42,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
 .cart {
   position: fixed;
   cursor: pointer;
@@ -58,12 +59,12 @@ export default {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
-  background-color: aquamarine;
+  background-color: $primary;
 }
 
 .cart__indicator {
-  background-color: black;
-  color: white;
+  background-color: $black;
+  color: $light-gray;
   border-radius: 50%;
   z-index: 15;
   text-align: center;
@@ -72,16 +73,13 @@ export default {
   left: 55%;
   margin-top: 0.5em;
   margin-left: 0.5em;
-  padding: 0.04em 0.5em;
-  min-width: 1.7em;
+  padding: 0.05em 0.5em;
+  min-width: 1.75em;
   min-height: 1.75em;
 }
 
-.fa-solid {
-  color: black;
-}
-
-.fa-cart-shopping {
+.cart__icon {
+  color: $light-gray;
   height: 5vh;
   width: 5vw;
   min-height: 30px;

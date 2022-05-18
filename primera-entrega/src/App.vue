@@ -5,7 +5,7 @@
 
     <section class="container my-5">
       <div class="row">
-        <div class="col"> 
+        <div class="col">
           <h2 class="mb-3">Hamburguesas</h2>
         </div>
       </div>
@@ -185,8 +185,8 @@ export default {
       } else {
         // Recuperar datos de producto de products[]
         let findProduct = this.products.find((product) => product.id === productId);
-        // Crea un nuevo objeto 
-        const newProduct = {...findProduct};
+        // Crea un nuevo objeto
+        const newProduct = { ...findProduct };
         // Agrega cantidad y total a nuevos productos
         newProduct.quantity = productCounter;
         newProduct.total = newProduct.price * newProduct.quantity;
@@ -207,8 +207,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "@/assets/scss/main.scss";
 #app {
   margin: 0;
+  color: $black;
+  background-color: $light-gray;
 }
 </style>

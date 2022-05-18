@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Rye&family=Suez+One&display=swap");
+
+// Variables
+$black: #1E000E;
+$light-gray: #F5F5F5;
+$primary: #E4572E;
+$secondary: #E4DCB4;
+
+$font-logo: 'Rye', cursive;
+$font-title: 'Suez One', serif;
+$font-text: 'Nunito', sans-serif;
+
+// Resets
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Typography
+main {
+  font-family: $font-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5, 
+h6 {
+    font-family: $font-title;
+}
