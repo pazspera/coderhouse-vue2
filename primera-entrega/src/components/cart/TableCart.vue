@@ -12,12 +12,14 @@
         <td>{{ product.price }}</td>
         <td>{{ product.total }}</td>
       </tr>
+      <tr>
+        <td colspan="4">Total: {{ calculateTotal }}</td>
+      </tr>
     </tbody>
   </table>
 </template>
 
 <script>
-
 export default {
   name: "TableCart",
   props: {
@@ -30,6 +32,15 @@ export default {
     return {
       tableTitles: ["Producto", "Cantidad", "Precio", "Total"],
     };
+  },
+  computed: {
+    calculateTotal() {
+      let totalInCart = Number(0);
+      this.cart.forEach((product) => {
+        totalInCart += Number(product.total);
+      });
+      return Number(totalInCart);
+    },
   },
 };
 </script>
