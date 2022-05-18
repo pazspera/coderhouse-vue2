@@ -190,7 +190,7 @@ export default {
         const newProduct = {...findProduct};
         // Agrega cantidad y total a nuevos productos
         newProduct.quantity = productCounter;
-        newProduct.total = newProduct.price;
+        newProduct.total = newProduct.price * newProduct.quantity;
         this.cart.push(newProduct);
       }
 
