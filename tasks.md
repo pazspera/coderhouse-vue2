@@ -2,8 +2,9 @@
 
 - Cambiar texto de TableCart para que no muestre la tabla si cart[] está vacío
 - Formato de los precios en TableCart y en ProductCard (filters ?)
-- Agregar btn con tacho basura a Table Cart para borrar toda la línea de un producto
 - Corregir descripciones de productos para que coincidan con las imgs
+- Mover las img a un servidor externo (imgur o cloudinary)
+- Recuperar los productos a través de una petición Axios a un JSON o mockapi.io
 
 - ~~Recuperar datos de productos de un JSON~~
 - ~~Agregar id a cada producto~~
