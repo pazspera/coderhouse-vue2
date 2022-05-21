@@ -22,15 +22,13 @@
         </div>
         <!-- Cursos -->
         <div class="row mb-3">
-            <div class="col-12">
-                <p>Elige tu curso</p>
+          <div class="col">
+            <p>Cursos disponibles</p>
+            <div class="form-check" v-for="(course, c) in availableCourses" :key="c">
+              <input class="form-check-input" type="checkbox" :name="course.id" :id="course.id" />
+              <label class="form-check-label" :for="course.id">{{ course.name }}</label>
             </div>
-            <div class="col">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="checkJavascript" id="checkJavascript">
-                    <label class="form-check-label" for="checkJavascript">JavaScript</label>
-                </div>
-            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -38,7 +36,35 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "WebForm",
+  data() {
+    return {
+      availableCourses: [
+        {
+          id: "checkJavascript",
+          name: "JavaScript",
+        },
+        {
+          id: "checkVue",
+          name: "Vue",
+        },
+        {
+          id: "checkReact",
+          name: "React",
+        },
+        {
+          id: "checkAngular",
+          name: "Angular",
+        },
+        {
+          id: "checkNode",
+          name: "NodeJS",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style></style>
