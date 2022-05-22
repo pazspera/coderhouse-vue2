@@ -38,9 +38,25 @@
         <div class="row mb-3">
           <div class="col">
             <p class="form-label">Cursos disponibles</p>
-            <div class="form-check" v-for="(course, c) in availableCourses" :key="c" >
-              <input class="form-check-input" type="checkbox" :name="course.id" :id="course.id" v-model="form.selectedCourses"/>
-              <label class="form-check-label" :for="course.id">{{ course.name }}</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="JavaScript" id="checkJS" v-model="form.selectedCourses" />
+              <label class="form-check-label" for="checkJS"> JavaScript </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Vue" id="checkVue" v-model="form.selectedCourses" />
+              <label class="form-check-label" for="checkVue"> Vue </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="React" id="checkReact" v-model="form.selectedCourses" />
+              <label class="form-check-label" for="checkReact"> React </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Angular" id="checkAngular" v-model="form.selectedCourses" />
+              <label class="form-check-label text-start" for="checkNg"> Angular </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="NodeJS" id="checkNodeJS" v-model="form.selectedCourses" />
+              <label class="form-check-label" for="checkNodeJS"> NodeJS</label>
             </div>
             <p>{{ form.selectedCourses }}</p>
           </div>
@@ -57,7 +73,7 @@
         <div class="row mb-3">
           <div class="col">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="newsletter" id="newsletter" v-model="form.newsletter"/>
+              <input class="form-check-input" type="checkbox" name="newsletter" id="newsletter" v-model="form.newsletter" />
               <label class="form-check-label" for="newsletter">Suscribime al newsletter</label>
               <p>{{ form.newsletter }}</p>
             </div>
@@ -75,28 +91,6 @@ export default {
   name: "WebForm",
   data() {
     return {
-      availableCourses: [
-        {
-          id: "checkJavascript",
-          name: "JavaScript",
-        },
-        {
-          id: "checkVue",
-          name: "Vue",
-        },
-        {
-          id: "checkReact",
-          name: "React",
-        },
-        {
-          id: "checkAngular",
-          name: "Angular",
-        },
-        {
-          id: "checkNode",
-          name: "NodeJS",
-        },
-      ],
       countriesList: [
         {
           id: "a",
