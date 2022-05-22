@@ -34,29 +34,13 @@
             <p>{{ form.country }}</p>
           </div>
         </div>
-        <!-- Cursos -->
+        <!-- Prueba checkboxes con v-for -->
         <div class="row mb-3">
           <div class="col">
             <p class="form-label">Cursos disponibles</p>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="JavaScript" id="checkJS" v-model="form.selectedCourses" />
-              <label class="form-check-label" for="checkJS"> JavaScript </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="Vue" id="checkVue" v-model="form.selectedCourses" />
-              <label class="form-check-label" for="checkVue"> Vue </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="React" id="checkReact" v-model="form.selectedCourses" />
-              <label class="form-check-label" for="checkReact"> React </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="Angular" id="checkAngular" v-model="form.selectedCourses" />
-              <label class="form-check-label text-start" for="checkNg"> Angular </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="NodeJS" id="checkNodeJS" v-model="form.selectedCourses" />
-              <label class="form-check-label" for="checkNodeJS"> NodeJS</label>
+            <div class="form-check" v-for="course in availableCourses" :key="course.id" :value="course.name">
+              <input class="form-check-input" type="checkbox" :value="course.name" :id="course.id" v-model="form.selectedCourses">
+              <label :for="course.id" class="form-check-label">{{ course.name }}</label>
             </div>
             <p>{{ form.selectedCourses }}</p>
           </div>
@@ -91,6 +75,28 @@ export default {
   name: "WebForm",
   data() {
     return {
+      availableCourses: [
+        {
+          id: "checkJavascript",
+          name: "JavaScript",
+        },
+        {
+          id: "checkVue",
+          name: "Vue",
+        },
+        {
+          id: "checkReact",
+          name: "React",
+        },
+        {
+          id: "checkAngular",
+          name: "Angular",
+        },
+        {
+          id: "checkNode",
+          name: "NodeJS",
+        },
+      ],
       countriesList: [
         {
           id: "a",
@@ -122,6 +128,7 @@ export default {
         comments: "",
         newsletter: false,
       },
+      cursosSeleccionados: []
     };
   },
 };
