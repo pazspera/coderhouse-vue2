@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <WebForm />
+    <WebForm v-show="false" />
+    <VuelidateTest />
   </div>
 </template>
 
 <script>
 import WebForm from "@/components/WebForm.vue";
+import VuelidateTest from "@/components/VuelidateTest.vue";
 
 export default {
   name: "App",
   components: {
-    WebForm
+    WebForm,
+    VuelidateTest
   },
 };
 </script>
