@@ -1,22 +1,16 @@
 <template>
   <div id="app">
-    <WebForm />
-    <!-- <VuelidateTest v-show="false"/> -->
-    <!-- <VuelidateTest2 /> -->
+    <FormWeb />
   </div>
 </template>
 
 <script>
-import WebForm from "@/components/WebForm.vue";
-/* import VuelidateTest from "@/components/VuelidateTest.vue"; */
-/* import VuelidateTest2 from "@/components/VuelidateTest2.vue"
- */
+import FormWeb from "@/components/FormWeb.vue";
+
 export default {
   name: "App",
   components: {
-    WebForm,
-    /* VuelidateTest,  */
-    /* VuelidateTest2 */
+    FormWeb,
   },
 };
 </script>
