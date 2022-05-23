@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <WebForm v-show="false" />
-    <VuelidateTest />
+    <WebForm />
+    <!-- <VuelidateTest v-show="false"/> -->
+    <!-- <VuelidateTest2 /> -->
   </div>
 </template>
 
 <script>
 import WebForm from "@/components/WebForm.vue";
-import VuelidateTest from "@/components/VuelidateTest.vue";
-
+/* import VuelidateTest from "@/components/VuelidateTest.vue"; */
+/* import VuelidateTest2 from "@/components/VuelidateTest2.vue"
+ */
 export default {
   name: "App",
   components: {
     WebForm,
-    VuelidateTest
+    /* VuelidateTest,  */
+    /* VuelidateTest2 */
   },
 };
 </script>

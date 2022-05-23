@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="container">
-      <form @submit.prevent>
+      <form @submit.prevent="validateForm">
         <!-- Nombre y apellido -->
         <div class="row mb-3">
           <div class="col">
-            <label class="form-label" for="name">Nombre</label>
-            <input type="text" class="form-control" name="name" id="name" v-model="form.name" />
-            <p>Nombre: {{ form.name }}</p>
+            <label class="form-label" for="firstName">Nombre</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" v-model="form.firstName" />
+            <p>Nombre: {{ form.firstName }}</p>
           </div>
           <div class="col">
             <label class="form-label" for="lastName">Apellido</label>
@@ -62,6 +62,13 @@
             </div>
             <p>Suscrito: {{ form.newsletter }}</p>
           </div>
+        </div>
+        <!-- Errores -->
+        <div v-if="errors.length > 0">
+          <p>Errores detectados:</p>
+          <ul class="text-warning fw-bold">
+            <li v-for="error in errors" v-bind:key="error.index">{{ error }}</li>
+          </ul>
         </div>
         <!-- Submit -->
         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -120,7 +127,7 @@ export default {
         },
       ],
       form: {
-        name: "",
+        firstName: "",
         lastName: "",
         email: "",
         country: "",
@@ -128,7 +135,24 @@ export default {
         comments: "",
         newsletter: false,
       },
+      errors: [],
     };
+  },
+  methods: {
+    validateForm: () => {
+      if (this.form.firstName && this.form.lastName && this.email) {
+        return true;
+      }
+      if (this.form.firstName === "") {
+        this.errors.push("El nombre es obligatorio.");
+      }
+      if (this.form.email === "") {
+        this.errors.push("El correo electrónico es obligatorio.");
+      }
+      if (this.form.lastName === "") {
+        this.errors.push("El apellido es obligatorio.");
+      }
+    },
   },
 };
 </script>

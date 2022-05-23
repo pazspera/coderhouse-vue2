@@ -14,10 +14,13 @@ import { required } from "@vuelidate/validators";
 
 export default {
   name: "VuelidateTest",
+  setup() {
+    return { v$: useValidate() };
+  },
   data() {
     return {
       // Add vuelidate to component
-      v$: useValidate(),
+     /*  v$: useValidate(), */
       email: "",
       password: {
         password: "",
