@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <FormWeb />
+    <FormWeb @submit-form="submitForm"/>
+    <div class="my-5"></div>
+    <TableUsers :users="users"/>
   </div>
 </template>
 
 <script>
 import FormWeb from "@/components/FormWeb.vue";
+import TableUsers from "@/components/TableUsers.vue";
 
 export default {
   name: "App",
   components: {
     FormWeb,
+    TableUsers
   },
+  data() {
+    return {
+      users: []
+    }
+  },
+  submitForm(formData){
+    const newUser = { ...formData};
+    console.log(newUser);
+    this.users.push(newUser);
+  }
 };
 </script>
 
