@@ -4,6 +4,7 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Vuelidate from "vuelidate";
 
+
 Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 

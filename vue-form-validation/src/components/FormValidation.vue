@@ -4,19 +4,21 @@
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="form.name" />
       <p>Name: {{ form.name }}</p>
-      <p v-if="!nameIsValid" class="text-danger">The name is required</p>
+      <p v-if="$v.form.name.$invalid" class="text-danger">The name is required</p>
     </div>
     <div class="form-group">
       <label for="age">Age:</label>
       <input type="number" id="age" v-model.number="form.age" />
       <p>Age: {{ form.age }}</p>
-      <p v-if="!ageIsValid" class="text-danger">The age is invalid</p>
+      <p v-if="$v.form.name.$invalid" class="text-danger">The age is invalid</p>
     </div>
-    <button :disabled="!formIsValid">Submit</button>
+    <button :disabled="$v.form.$invalid">Submit</button>
   </form>
 </template>
 
 <script>
+import { required, integer, between } from "vuelidate/lib/validators";
+
 export default {
   name: "FormValidation",
   data() {
@@ -27,26 +29,26 @@ export default {
       },
     };
   },
+  validations: {
+    form: {
+      name: {
+        required: required,
+      },
+      age: {
+        required: required,
+        integer: integer,
+        between: between(12, 120)
+      },
+    },
+  },
   methods: {
     submitForm() {
-      if (this.formIsValid) {
+      if (!this.$v.form.$invalid) {
         console.log("Form Submitted", this.form);
       } else {
         console.log("Invalid Form");
       }
     },
-  },
-  computed: {
-    nameIsValid() {
-      // Convierte el valor a booleano con el !!
-      return !!this.form.name;
-    },
-    ageIsValid() {
-      return typeof this.form.age === "number" && this.form.age > 12 && this.form.age < 120;
-    },
-    formIsValid() {
-        return this.nameIsValid && this.ageIsValid;
-    }
   },
 };
 </script>
